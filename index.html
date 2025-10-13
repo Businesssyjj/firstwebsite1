@@ -1,46 +1,44 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rakennamme verkkosivut, sovellukset ja pelit tekoälyllä – nopeasti, edullisesti ja laadukkaasti.">
-  <meta name="keywords" content="verkkosivut, sovellukset, pelit, tekoäly, web-kehitys, SEO, Tampere">
-  <meta name="author" content="Sinun Nimesi">
-  <meta name="robots" content="index, follow">
-  <title>Webuild – Tekoälyllä tehostettu verkkosivupalvelu</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background: #f0f4f8;
-      color: #1a1a1a;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-    .cta {
-      background: #0077ff;
-      color: white;
-      padding: 1rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .cta:hover {
-      background: #005fcc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Development</title>
+    <!-- Load Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <h1>Tervetuloa Webuildiin</h1>
-  <p>Rakennamme verkkosivut, sovellukset ja pelit tekoälyllä – nopeasti, edullisesti ja laadukkaasti.</p>
-  <a href="mailto:sinun@email.fi" class="cta">Ota yhteyttä</a>
+<body class="bg-gray-100 font-sans h-screen flex items-center justify-center">
+
+    <div class="text-center p-8 bg-white rounded-xl shadow-2xl max-w-lg mx-auto">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+            Test Page
+        </h1>
+        <p class="text-lg text-gray-500 mb-6">
+            We are currently developing our website.
+        </p>
+        <p class="text-sm text-gray-400">
+            Please check back soon!
+        </p>
+        
+        <!-- Kaksi pyörivää nuolta (kehitystyön symboli) -->
+        <div class="mt-8 text-indigo-500">
+            <!-- SVG, joka kuvaa kahta pyörivää nuolta (vrt. päivitys/kierrätys) -->
+            <svg class="w-12 h-12 animate-spin mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M4 12a8 8 0 0114.65-4.708l1.325-1.325M20 12a8 8 0 01-14.65 4.708l-1.325 1.325" />
+            </svg>
+        </div>
+    </div>
+
 </body>
 </html>
