@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StrongSite Digital – Meistä</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --color-light-blue: #D6E8FF;
+            --color-blue: #007BFF;
+            --color-white: #ffffff;
+            --color-dark: #000000;
+            --color-accent: #004080;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: radial-gradient(circle at 0% 100%, rgba(0, 64, 128, 0.2) 0%, var(--color-white) 75%);
+            background-attachment: fixed;
+        }
+        .header-line {
+            display: inline-block;
+            width: 8px;
+            height: 100%;
+            background-color: var(--color-blue);
+            margin-right: 0.75rem;
+            border-radius: 9999px;
+        }
+        .cta-button {
+            border: 2px solid var(--color-accent);
+            background-color: var(--color-accent);
+            color: var(--color-white);
+        }
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--color-accent);
+        }
+        #side-menu {
+            transition: transform 0.3s ease-in-out;
+            background-color: #1a1a1a;
+            color: var(--color-white);
+        }
+        .translate-x-full {
+            transform: translateX(100%);
+        }
+        .translate-x-0 {
+            transform: translateX(0%);
+        }
+        .main-cta-button {
+            width: 4cm;
+            text-align: center;
+            padding: 0.25rem 0.1rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<header class="w-full p-4 md:p-6 lg:p-8 flex justify-between items-center border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-40 relative">
+    <div class="text-2xl font-bold tracking-widest text-gray-900">StrongSite</div>
+    <nav class="flex-grow flex justify-end">
+        <div class="flex items-center space-x-8 lg:space-x-12">
+            <a href="index.html" class="text-gray-700 hover:text-blue-500 transition duration-150 hidden sm:block">Etusivu</a>
+            <a href="palvelut.html" class="text-gray-700 hover:text-blue-500 transition duration-150 hidden sm:block">Palvelut</a>
+            <a href="meista.html" class="px-4 py-2 rounded-full font-semibold transition duration-300 cta-button">Meistä</a>
+            <a href="yhteystiedot.html" class="text-gray-700 hover:text-blue-500 transition duration-150 hidden sm:block">Yhteystiedot</a>
+            <div class="flex items-center space-x-4 ml-6 sm:ml-0">
+                <button id="toggle-search" class="text-gray-900">
+                    <svg class="w-6 h-6 lg:w-7 lg:h-7 cursor-pointer hover:text-gray-600 transition duration-150" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+                <button id="open-menu" class="text-gray-900">
+                    <svg class="w-6 h-6 cursor-pointer hover:text-gray-600 transition duration-150" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="search-bar-container"
+     class="bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300 ease-in-out overflow-hidden z-30 sticky top-[72px] md:top-[88px] lg:top-[104px]"
+     style="max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; transform: translateY(-1px);">
+    <div class="container mx-auto px-4 py-3 flex items-center">
+        <input type="text" id="main-search-input" placeholder="Syötä haku"
+               class="w-full text-lg p-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition duration-150" style="height: 1cm;">
+    </div>
+</div>
+
+<div id="side-menu" class="fixed top-0 right-0 h-full w-[5cm] shadow-lg z-50 translate-x-full">
+    <div class="flex justify-end p-4">
+        <button id="close-menu" class="text-white text-2xl font-bold hover:text-blue-400">&times;</button>
+    </div>
+    <div class="px-4 text-white">
+        <a href="index.html" class="block mt-4">Etusivu</a>
+        <a href="palvelut.html" class="block mt-2">Palvelut</a>
+        <a href="meista.html" class="block mt-2">Meistä</a>
+        <a href="yhteystiedot.html" class="block mt-2">Yhteystiedot</a>
+        <a href="#" class="mt-4 px-4 py-2 block text-center rounded-full font-semibold transition duration-300 cta-button text-sm">Ota Yhteyttä</a>
+    </div>
+</div>
+
+<main class="container mx-auto px-4 md:px-8 lg:px-12 mt-16 md:mt-28 lg:mt-36">
+    <div class="flex flex-col">
+        <div class="flex items-start">
+            <span class="header-line h-[80px] sm:h-[96px] lg:h-[144px] mt-1"></span>
+            <div class="flex flex-col max-w-4xl">
+                <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight leading-tight text-gray-900">
+                    Meistä
+                </h1>
+                <p class="text-base md:text-lg lg:text-xl text-gray-600 mt-6">
+                    StrongSite Digital on kokenut digitoimisto, joka tarjoaa asiakkailleen laadukkaita verkkopalveluita ja digimarkkinointia.
+                </p>
+                <p class="mt-4 text-gray-700">
+                    Tiimimme koostuu intohimoisista ammattilaisista, jotka pyrkivät jatkuvasti parantamaan asiakkaidemme näkyvyyttä ja liiketoimintaa verkossa.
+                </p>
+                <a href="yhteystiedot.html" class="mt-8 inline-block font-semibold rounded-full cta-button transition duration-300 main-cta-button">Ota yhteyttä</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+    const sideMenu = document.getElementById('side-menu');
+    const body = document.body;
+    const toggleSearchBtn = document.getElementById('toggle-search');
+    const searchContainer = document.getElementById('search-bar-container');
+    const mainSearchInput = document.getElementById('main-search-input');
+
+    toggleSearchBtn.addEventListener('click', () => {
+        const isHidden = searchContainer.style.maxHeight === '0px' || searchContainer.style.maxHeight === '';
+        if (isHidden) {
+            searchContainer.style.maxHeight = '100px';
+            searchContainer.style.opacity = '1';
+            searchContainer.style.paddingTop = '1rem';
+            searchContainer.style.paddingBottom = '1rem';
+            setTimeout(() => mainSearchInput.focus(), 300);
+        } else {
+            searchContainer.style.maxHeight = '0';
+            searchContainer.style.opacity = '0';
+            searchContainer.style.paddingTop = '0';
+            searchContainer.style.paddingBottom = '0';
+            mainSearchInput.value = '';
+        }
+    });
+
+    openBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('translate-x-full');
+        sideMenu.classList.add('translate-x-0');
+        body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('translate-x-0');
+        sideMenu.classList.add('translate-x-full');
+        body.style.overflow = '';
+    });
+</script>
+
+</body>
+</html>
